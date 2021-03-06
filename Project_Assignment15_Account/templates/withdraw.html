@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<html>
+  <head>
+     <style type="text/css">
+         div.r1
+         {
+             alignment: center;
+             font-style: oblique;
+             text-align: center;
+             border: 2px solid red;
+             width: 500px;
+             height: 250px;
+             margin-left: 500px;
+             margin-top: 80px;
+         }
+         .r2
+         {
+             border-color: red;
+             color:#ff22c8;
+             font-style: italic;
+             font-size: 25px;
+         }
+         .button
+         {
+             background-color:coral;
+             border:1px solid black;
+             color:black;
+             padding: 5px 30px;
+             text-align: center;
+             text-decoration: none;
+             display: inline-block;
+             font-size: 16px;
+             margin: 4px 2px;
+             cursor: pointer;
+         }
+     </style>
+  </head>
+  <body background="{% static 'image/a4a8eb973140955ab0568447dc835ff4.0.jpg'%}">
+   <fieldset class="r2"><center><h1>Web Banking</h1></center></fieldset>
+    <div class="r1">
+        <h1 style="color: #127dff">Withdraw Money</h1>
+
+        <form action="{% url 'wdraw' %}" method="post">
+              {% csrf_token %}
+            <input type="number" max="5000" required
+                               name="m1"  placeholder="Enter Amount"><br><br>
+            <button type="submit" class="button">Draw</button>
+        </form>
+
+        <form action="{% url 'login' %}" method="post">
+              {% csrf_token %}
+            <button type="submit" class="button">Logout</button></form>
+    </div>
+  </body>
+</html>

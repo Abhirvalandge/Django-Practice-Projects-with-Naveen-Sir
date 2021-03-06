@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<html>
+<head>
+    <script type="text/javascript"
+    src="{% static 'js/check.js' %}">
+
+    </script>
+</head>
+    <body>
+        <form action="/check/" method="post">
+            {% csrf_token %}
+        <table align="center" border="0">
+            <tr>
+                <th><h2>Login Page</h2></th>
+            </tr>
+            <tr>
+                <th><input type="text" placeholder="Username" required name="uname"></th>
+            </tr>
+            <tr>
+                <th>
+                    <input id = "p1" type="password" placeholder="Password" required name="upass" onkeyup="validate()">
+                    <span id="s1" style="color: red"></span>
+                    <span id="s2" style="color: blue"></span>
+                    <span id="s3" style="color: green"></span>
+                </th>
+            </tr>
+            <tr>
+                <th><button type="submit">Login</button> </th>
+            </tr>
+        </table>
+        </form>
+
+
+    {% if message %}
+        <h3 style="color: red">{{ message }}</h3>
+    {% endif %}
+    </body>
+</html>

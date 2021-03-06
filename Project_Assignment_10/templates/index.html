@@ -1,0 +1,36 @@
+<html>
+<body>
+<form action="/ad/" method="post">
+    {% csrf_token %}
+<table align="center" border="0" width="500" style="height: 200px">
+    <tr><th><h1 align="center" style="color: red">Multi User Login Page</h1></th></tr>
+
+    <tr><th><h3 style="color:#8b7d11">Username
+        <input type="text" name="A1" required style="color: crimson"></h3></th></tr>
+
+    <tr><th><h3 style="color: #1778b2">Password
+        <input type="password" name="A2" required style="color: #b828dc"></h3></th></tr>
+</table>
+
+<table align="center" border="0" width="300" style="height: 100px">
+    <tr>
+        <th><input type="radio" name="ad" checked value="adm">Admin</th>
+        <th><input type="radio" name="ad" value="emp">Employee</th>
+    </tr>
+    <tr>
+        <th><input type="radio" name="ad" value="fac">Faculty</th>
+        <th><input type="radio" name="ad" value="stu">Student</th>
+    </tr>
+</table>
+    <table align="center" border="0" width="300" style="height: 100px">
+    <tr><th align="center"><button type="submit" style="background-color: darksalmon;
+                      height: 30px;width: 100px">Login</button></th></tr>
+    </table>
+</form>
+{% if message %}
+    <h2 align="center" style="color: darkblue">
+        {{ message }}
+    </h2>
+{% endif %}
+</body>
+</html>

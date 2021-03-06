@@ -1,0 +1,18 @@
+<html>
+   <head>
+       <title>Contact Form</title>
+   </head>
+   <body>
+        <center>
+            <h1>Contact Form With Send Email</h1>
+            <hr/>
+            <form method="post">
+                {% csrf_token %}
+                <table border="1" style="border: none;">
+                    <h2>{{ form }}</h2>
+                </table>
+                <button type="submit" value="send">Send</button>
+            </form>
+        </center>
+   </body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+<body>
+<form action={% url "a1" %} method="post">
+    {% csrf_token %}
+    <h1 align="center" style="color:cornflowerblue"><tt><u>Student Marks</u></tt></h1>
+<table align="center" border="0" style="height: 150px;width: 150px">
+    <tr>
+        <th align="left" style="color: coral">Student No <input type="number" name="s1" required minlength="1000" maxlength="9999"></th>
+    </tr>
+    <tr>
+        <th align="left" style="color: coral">Student Name <input type="text" name="s2" required minlength="5" maxlength="30"></th>
+    </tr>
+    <tr>
+        <th align="left" style="color: coral">Subject 1 <input type="number" name="s3" required minlength="1" maxlength="100"></th>
+    </tr>
+    <tr>
+        <th align="left" style="color: coral">Subject 2 <input type="number" name="s4" required minlength="1" maxlength="100"></th>
+    </tr>
+    <tr>
+        <th align="left" style="color: coral">Subject 3 <input type="number" name="s5" required minlength="1" maxlength="100"></th>
+    </tr>
+</table><table align="center" border="0" style="height: 70px;width: 20px">
+    <tr>
+        <th><button type="submit" style="width: 80px;height: 30px;color: crimson">Display</button> </th>
+    </tr>
+</table>
+</form>
+<h2 align="center" style="color:brown">
+{% if data %}
+   {{ "Total Marks=" }} {{ data1 }}{{ "+" }}{{ data2 }}{{ "+" }}{{ data3 }}{{ "=" }}{{ data }}<br><br>
+    {{ "Average=" }}{{ data4 }}<br>
+    <h3 align="center" style="color:darkblue">
+    {{ "Subject1=" }} {{ s1 }}<br>
+    {{ "Subject2=" }} {{ s2 }}<br>
+    {{ "Subject3=" }} {{ s3 }}<br>
+    </h3>
+{% endif %}
+
+</h2>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% load staticfiles %}
+<html>
+  <head>
+      <script type="text/javascript",src="{% static 'js/script.js' %}"></script>
+      <form action="{% url 'save' %}" method="post">
+          {% csrf_token %}
+        <table border="0" align="center">
+          <tr><th>Employee Registration</th></tr>
+            {{ form }}
+            <button>Save</button>
+        </table>
+      </form>
+  </head>
+</html>

@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<html>
+  <body>
+
+     <h1 style="color: deeppink">Welcome User</h1>
+     {% if request.session.uname %} Session is Available
+         <img src="{% static '1899341.png' %}" width="250" height="250">
+         <form action="{% url 'logout' %}">
+         {% csrf_token %}
+           <button type="submit">Logout</button>
+         </form>
+         {% else %} Invalid
+     {% endif %}
+  </body>
+</html>

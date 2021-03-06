@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<html>
+<body>
+
+<table align="center">
+    <h1 align="center">Hero Image</h1>
+    {% if image1 %}
+    <tr>
+        <th><img src="{% static 'images/download.jpg' %}"
+                            style="height: 400px;width: 200px"></th>
+        <th><img src="{% static 'images/images.jpg' %}"
+                            style="height: 400px;width: 200px"></th>
+        <th><img src="{% static 'images/images (1).jpg' %}"
+                            style="height: 400px;width: 200px"></th>
+    </tr>
+
+    {% elif image2 %}
+    <table align="center">
+    <h1 align="center">Heroian Image</h1>
+    <tr>
+        <th><img src="{% static 'images/images (2).jpg' %}"
+                            style="height: 400px;width: 200px"></th>
+        <th><img src="{% static 'images/wp2480779.jpg' %}"
+                            style="height: 400px;width: 200px"></th>
+        <th><img src="{% static 'images/wp2582644.jpg' %}"
+                            style="height: 400px;width: 200px"></th>
+    </tr>
+
+      {% else %}
+        <table align="center">
+    <h1 align="center">Faculty Image</h1>
+    <tr>
+        <th><img src="{% static 'images/1521845_10151649743204058_1130058617_n.jpg' %}"
+                            style="height: 400px;width: 200px"></th>
+        <th><img src="{% static 'images/26239770_1132730863530544_7771874747280773585_n.jpg' %}"
+                            style="height: 400px;width: 200px"></th>
+        <th><img src="{% static 'images/56269998_10155580856264058_4458176362485645312_n.jpg' %}"
+                            style="height: 400px;width: 200px"></th>
+    </tr>
+   {% endif %}
+
+</table>
+</body>
+</html>

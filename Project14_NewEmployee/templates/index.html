@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<html>
+    <body>
+        <table align="center" border="2">
+            <tr>
+                <th width="150">
+                    <a href="{% url 'new'%}">
+                        Add new Employee
+                    </a>
+                </th>
+            </tr>
+            <tr>
+                <th width="150">
+                    <a href="{% url 'view' %}">
+                        View All Employees
+                    </a>
+                </th>
+            </tr>
+        </table>
+        {% if message %}
+            <img src="{% static 'images/database.png' %}" width="75" height="75">
+            <h3>{{ message }}</h3>
+        {% endif %}
+    </body>
+</html>

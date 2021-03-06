@@ -1,0 +1,18 @@
+<html>
+  <body>
+    <form action="{% url 'validate' %}" method="post">
+        {% csrf_token %}
+        <table align="center">
+            <tr><th><h2 style="color: red;">Login Page</h2></th></tr>
+            <tr><th><input type="text" placeholder="Username" name="uname" required></th></tr>
+            <tr><th><input type="password" placeholder="Password" name="password" required></th></tr>
+            <tr><th><button>Login</button></th></tr>
+            <tr><th><h3>If you don't have account so register here,</h3></th></tr>
+            <tr><th><a href="/register/">Register</a></th></tr>
+        </table>
+    </form>
+    {% if message %}
+        <h2 align="center" style="color: coral">{{ message }}</h2>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,6 @@
+TEMPLATES=[
+   {
+     'BACKEND'=django.template.backends.django.Django Templates;
+      'DIRS'=['templates']
+}
+]  

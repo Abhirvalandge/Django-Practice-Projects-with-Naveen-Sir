@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<html>
+  <head>
+     <style type="text/css">
+         div.r1
+         {
+             alignment: center;
+             font-style: oblique;
+             text-align: center;
+             border: 2px solid red;
+             width: 500px;
+             height: 250px;
+             margin-left: 500px;
+             margin-top: 80px;
+         }
+         .r2
+         {
+             <!--background-color: aquamarine;-->
+             border-color:red;
+             color:#ff22c8;
+             font-style: italic;
+             font-size: 25px;
+         }
+     </style>
+  </head>
+  <body background="{% static 'image/a4a8eb973140955ab0568447dc835ff4.0.jpg'%}">
+  <form action="{% url 'welcome' %}" method="post">
+  {% csrf_token %}
+  <fieldset class="r2" style="border-color: red" ><center><h1>Web Banking</h1></center></fieldset>
+    <div class="r1">
+        <h1 style="color: #127dff">Account Holder Login</h1>
+        <br><input type="number" required name="uacc" maxlength="5" placeholder="Account No."><br>
+        <br><input type="password" required name="upass" maxlength="8" placeholder="Password "><br><br>
+        <button type="submit">Login</button>
+    </div>
+      {% if message %}
+           <h2 align="center" style="color: blue">{{ message }}</h2>
+      {% endif %}
+  </form>
+  </body>
+</html>

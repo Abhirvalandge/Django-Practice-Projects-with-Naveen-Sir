@@ -1,0 +1,12 @@
+<html>
+<body>
+<h1>
+    Forms Example
+</h1>
+<form action="{% url 'save' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>

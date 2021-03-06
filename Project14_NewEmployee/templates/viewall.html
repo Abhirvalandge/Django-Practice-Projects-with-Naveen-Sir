@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<html>
+    <body>
+
+    {% if data %}
+        <table align="center" border="2">
+            <tr><th colspan="7">All Employees List</th></tr>
+            <tr bgcolor="aqua">
+                <th width="100">IDNO</th>
+                <th width="100">NAME</th>
+                <th width="100">GENDER</th>
+                <th width="100">SALARY</th>
+                <th width="100">Date of Join</th>
+                <th width="100"> Update </th>
+                <th width="100"> Delete </th>
+            </tr>
+            {% for x in data %}
+                <tr>
+                  <th width="100">{{ x.idno }}</th>
+                <th width="100">{{ x.name }}</th>
+                <th width="100">{{ x.gender }}</th>
+                <th width="100">{{ x.salary }}</th>
+                <th width="100">{{ x.doj }}</th>
+                <th width="100">
+
+                    <form action="{% url 'update' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="u_id" value="{{ x.idno }}">
+                        <button type="submit">Yes</button>
+                    </form>
+
+                </th>
+                    <th>
+
+                        {% comment %}<a href="/delete/?i={{ x.idno }}">{% endcomment %}
+                        <a href="{% url 'del' %}?i={{ x.idno }}">
+                        <img src="{% static 'images/rubbish-bin.png' %}">
+                        </a>
+                    </th>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else%}
+        <h3>No Employees are Available</h3>
+    {% endif %}
+
+    </body>
+</html>

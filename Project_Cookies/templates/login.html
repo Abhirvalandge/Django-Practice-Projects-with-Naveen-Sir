@@ -1,0 +1,19 @@
+<html>
+<body>
+<form action="welcome.html" method="post">
+{% csrf_token %}
+<table border="1" align="center">
+    <tr>
+        <th><input type="text" placeholder="Username" required></th>
+        <th><input type="password" placeholder="Password" required></th>
+    </tr>
+    <tr>
+        <button type="submit">Login</button>
+    </tr>
+</table>
+{% if message1 %}
+    <h2 align="center" style="color: blue">{{ message1 }}</h2>
+{% endif %}
+</form>
+</body>
+</html>

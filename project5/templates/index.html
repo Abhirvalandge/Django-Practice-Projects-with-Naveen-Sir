@@ -1,0 +1,21 @@
+<html>
+<body>
+<h1>
+    Data Table
+</h1>
+<table border="2" width="400">
+    <tr>
+        <th>IDNO</th>
+        <th>NAME</th>
+        <th>DESIGNATION</th>
+    </tr>
+    <tr>
+        {% for k,v in d1 %}
+          <h3>
+            {{ forloop.counter }}
+          </h3>
+        {% endfor %}
+    </tr>
+</table>
+</body>
+</html>
